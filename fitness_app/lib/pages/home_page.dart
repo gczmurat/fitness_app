@@ -1,3 +1,4 @@
+import 'package:fitness_app/constants/app_constant.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,12 +8,28 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
-        title: Center(
-          child: Image(image: AssetImage("assets/images/Screenshot_1.png"),),
+        title: const Center(
+          child: Image(
+            image: AssetImage("images/logo.jpg"),
+            width: 300,
+          ),
         ),
       ),
+      body: Column(children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              "Ücretsiz Kargo",
+              style: Sabitler.yaziStyle,
+            ),
+            Text("Kapıda Ödeme", style: Sabitler.yaziStyle),
+            Text("Güvenli Alışveriş", style: Sabitler.yaziStyle)
+          ],
+        )
+      ]),
     );
   }
 }
