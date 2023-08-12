@@ -11,7 +11,7 @@ class NavbarProvider with ChangeNotifier {
     NavbarDTO(label: 'Menü', widget: MenuPage(), iconData: Icons.menu),
     NavbarDTO(label: 'Ara', widget: AraPage(), iconData: Icons.search),
     NavbarDTO(label: 'Hesabım', widget: HesapPage(), iconData: Icons.account_box),
-    NavbarDTO(label: 'Sepetim', widget: SepetPage(), iconData: Icons.shop),
+    NavbarDTO(label: 'Sepetim', widget: SepetPage(), iconData: Icons.shop_two),
   ];
   int _selectedIndex = 0;
 

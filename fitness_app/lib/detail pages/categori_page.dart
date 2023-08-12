@@ -21,8 +21,8 @@ class _CategoryRowState extends State<CategoryRow> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueGrey.shade700,
-      height: 50,
+      color: Colors.black,
+      height: 45,
       child: ListView.builder(
         itemCount: categories.length,
         scrollDirection: Axis.horizontal,
@@ -43,7 +43,7 @@ class _CategoryRowState extends State<CategoryRow> {
               margin: EdgeInsets.symmetric(horizontal: 4),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: isSelected ? Colors.white : Colors.blueGrey.shade700,
+                color: isSelected ? Colors.white : Colors.black,
                 borderRadius: BorderRadius.circular(0),
               ),
               child: Center(
@@ -51,7 +51,7 @@ class _CategoryRowState extends State<CategoryRow> {
                   category,
                   style: TextStyle(
                     fontFamily: GoogleFonts.kanit().fontFamily,
-                    color: isSelected ? Colors.blueGrey.shade700 : Colors.white,
+                    color: isSelected ? Colors.black : Colors.white,
                     fontSize: 16,
                     fontWeight:  FontWeight.w600,
                   ),

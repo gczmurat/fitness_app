@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            color: Colors.blueGrey.shade700,
+            color: Colors.black,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
