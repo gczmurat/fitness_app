@@ -22,7 +22,7 @@ class _CategoryRowState extends State<CategoryRow> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      height: 45,
+      height: 40,
       child: ListView.builder(
         itemCount: categories.length,
         scrollDirection: Axis.horizontal,
@@ -41,7 +41,7 @@ class _CategoryRowState extends State<CategoryRow> {
               duration: Duration(milliseconds: 200),
               curve: Curves.easeInOut,
               margin: EdgeInsets.symmetric(horizontal: 4),
-              padding: EdgeInsets.all(10),
+              padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                 color: isSelected ? Colors.white : Colors.black,
                 borderRadius: BorderRadius.circular(0),

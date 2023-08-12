@@ -1,4 +1,5 @@
 import 'package:fitness_app/constants/app_constant.dart';
+import 'package:fitness_app/detail%20pages/antrenmanlar/antrenman_listesi.dart';
 import 'package:fitness_app/detail%20pages/categori_page.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  print("Antrenmanlar kutusuna tıklandı.");
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => AntrenmanListesi()));
                 },
                 child: Column(
                   children: [
@@ -67,7 +68,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 3),
                     Text(
                       "Antrenmanlar",
                       style: Sabitler.yaziStyle2,
@@ -104,7 +105,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 3),
                     Text(
                       "Kalori Hesapla",
                       style: Sabitler.yaziStyle2,
@@ -141,7 +142,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 3),
                     Text(
                       "Fırsatlar",
                       style: Sabitler.yaziStyle2,

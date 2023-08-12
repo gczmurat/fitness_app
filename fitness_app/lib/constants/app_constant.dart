@@ -26,4 +26,10 @@ class Sabitler {
     fontWeight: FontWeight.w700,color:Colors.black
     
   );
+  static final TextStyle yaziStyle4 = TextStyle(
+    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontSize: 22,
+    fontWeight: FontWeight.w700,color:Colors.white
+    
+  );
 }
