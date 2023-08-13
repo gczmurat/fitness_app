@@ -178,7 +178,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             child: Align(
               alignment: Alignment.centerLeft,
               child: TabBar(
-                //labelPadding: EdgeInsets.only(left: 0,right: 0),
                 isScrollable: true,
                 indicatorColor: Colors.black,
                 indicatorSize: TabBarIndicatorSize.tab,
