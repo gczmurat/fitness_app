@@ -30,6 +30,12 @@ class AntrenmanListesi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
         title: Text("Antrenmanlar", style: Sabitler.yaziStyle4),
         toolbarHeight: 45,
         centerTitle: true,

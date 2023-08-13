@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Sabitler {
-  static const MaterialColor anaRenk = Colors.pink;
+  static const MaterialColor anaRenk = Colors.blue;
   static const Color renk1 = Color(0xFFFFFFFF);
   static const Color renk2 = Color(0x00272b3c);
   static const Color renk3 = Color(0x003e5f6d);

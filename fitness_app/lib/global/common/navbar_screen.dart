@@ -16,16 +16,20 @@ class NavbarScreen extends StatelessWidget {
         children: mp.items.map((e) => e.widget!).toList(),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black,
         currentIndex: mp.selectedIndex,
         onTap: (i) {
           mp.selectedIndex = i;
         },
-        backgroundColor: Colors.black, 
-        selectedItemColor: Colors.blue, 
-        unselectedItemColor: Colors.blueGrey.shade700, 
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.blueGrey.shade700,
         items: mp.items
-            .map((e) =>
-                BottomNavigationBarItem(icon: Icon(e.iconData), label: e.label))
+            .map(
+              (e) => BottomNavigationBarItem(
+                icon: Icon(e.iconData),
+                label: e.label,
+              ),
+            )
             .toList(),
       ),
     );
