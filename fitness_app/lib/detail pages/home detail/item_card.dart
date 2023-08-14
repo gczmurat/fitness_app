@@ -1,27 +1,19 @@
 import 'package:fitness_app/constants/app_constant.dart';
+import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
 import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
-  final String imageUrl;
-  final double price;
-  final VoidCallback onPressed;
-  final String marka;
-  final String urun;
-  final String agirlik;
+  final Product product;
+  final Function onPressed;
 
   const ItemCard({
-    required this.imageUrl,
-    required this.price,
-    required this.onPressed,
-    required this.marka,
-    required this.urun,
-    required this.agirlik,
+    required this.product, required this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed,
+      onTap: (){},
       child: Padding(
         padding: const EdgeInsets.all(1.0),
         child: Container(
@@ -43,7 +35,7 @@ class ItemCard extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(0)),
                 child: Image.network(
-                  imageUrl,
+                  product.image,
                   height: 100,
                   width: double.infinity,
                   fit: BoxFit.fitHeight, 
@@ -53,7 +45,7 @@ class ItemCard extends StatelessWidget {
                 padding: const EdgeInsets.all(2),
                 child: Center(
                   child: Text(
-                    "$marka $urun  $agirlik gr",
+                    "${product.brand} " "${product.crop}"" ""${product.weight} " "gr ",
                     style: Sabitler.yaziStyle5,
                     maxLines: 2,
                     overflow: TextOverflow.clip,
@@ -64,7 +56,7 @@ class ItemCard extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 2),
                 child: Center(
                   child: Text(
-                    '$price TL',
+                    '${product.price} TL',
                     style: Sabitler.yaziStyle6,
                   ),
                 ),

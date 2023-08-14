@@ -1,3 +1,4 @@
+import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/item_card.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/mid_row.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/tab_container.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _tabController = TabController(length: 5, vsync: this);
-    _tabController.index=0;
+    _tabController.index = 0;
   }
 
   @override
@@ -89,7 +90,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 _kombinasyonlar(),
                 _yeniUrunler(),
                 _oneCikanlar()
-              
               ],
             ),
           )
@@ -98,85 +98,59 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 }
-_enCokSatanlar(){
+
+_enCokSatanlar() {
   return GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    ),
-                    itemBuilder: (context, index) => ItemCard(
-                          imageUrl:
-                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/kingsize_nutrition_zma_complex_100_tablet_70267.jpeg',
-                          price: 1999,
-                          onPressed: () {},
-                          marka: 'KingSize',
-                          urun: 'ZMA',
-                          agirlik: '300', 
-                        ));
+    itemCount: 8,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+      ),
+      itemBuilder: (context, index) => ItemCard(
+            product: products[0],
+            onPressed: () {},
+          ));
 }
 
-_proteinler(){
+_proteinler() {
   return GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    ),
-                    itemBuilder: (context, index) => ItemCard(
-                          imageUrl:
-                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/supplementlercom_whey_protein_2000_gr_76555.jpeg',
-                          price: 1999,
-                          onPressed: () {},
-                          marka: 'BigJoy',
-                          urun: 'Protein',
-                          agirlik: '2000', 
-                        ));
+    itemCount: 8,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 1),
+      itemBuilder: (context, index) => ItemCard(
+            product: products[1],
+            onPressed: () {},
+          ));
 }
 
-_kombinasyonlar(){
+_kombinasyonlar() {
   return GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    ),
-                    itemBuilder: (context, index) => ItemCard(
-                          imageUrl:
-                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/supplementlercom_gainer_3000_gr_bcaa_480_gr_kombinasyonu_38818.jpeg',
-                          price: 1999,
-                          onPressed: () {},
-                          marka: 'Suplementler',
-                          urun: 'Kilo',
-                          agirlik: '900', 
-                        ));
+    itemCount: 8,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 1),
+      itemBuilder: (context, index) => ItemCard(
+            product: products[2],
+            onPressed: () {},
+          ));
 }
 
-_yeniUrunler(){
+_yeniUrunler() {
   return GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    ),
-                    itemBuilder: (context, index) => ItemCard(
-                          imageUrl:
-                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/hardline_progainer_3000_gr_39326.jpeg',
-                          price: 1999,
-                          onPressed: () {},
-                          marka: 'Hard Line',
-                          urun: 'Gainer',
-                          agirlik: '2000', 
-                        ));
+    itemCount: 8,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 1),
+      itemBuilder: (context, index) => ItemCard(
+            product: products[3],
+            onPressed: () {},
+          ));
 }
 
-_oneCikanlar(){
+_oneCikanlar() {
   return GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    ),
-                    itemBuilder: (context, index) => ItemCard(
-                          imageUrl:
-                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/hardline_kreatin_100_mikronize_300_gr_14580.jpeg',
-                          price: 1999,
-                          onPressed: () {},
-                          marka: 'Hard Line',
-                          urun: 'Creatine',
-                          agirlik: '300', 
-                        ));
+      itemCount: 8,
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2, childAspectRatio: 1),
+      itemBuilder: (context, index) => ItemCard(
+            product: products[4],
+            onPressed: () {},
+          ));
 }
-
-
-
