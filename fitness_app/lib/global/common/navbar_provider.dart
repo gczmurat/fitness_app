@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 class NavbarProvider with ChangeNotifier {
   List<NavbarDTO> items = [
-    NavbarDTO(label: 'Home', widget: HomePage(), iconData: Icons.home),
+    NavbarDTO(label: 'Ana Sayfa', widget: HomePage(), iconData: Icons.home),
     NavbarDTO(label: 'Menü', widget: MenuPage(), iconData: Icons.menu),
     NavbarDTO(label: 'Ara', widget: AraPage(), iconData: Icons.search),
     NavbarDTO(label: 'Hesabım', widget: HesapPage(), iconData: Icons.account_box),

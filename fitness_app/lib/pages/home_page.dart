@@ -1,3 +1,6 @@
+import 'package:fitness_app/detail%20pages/home%20detail/item_card.dart';
+import 'package:fitness_app/detail%20pages/home%20detail/widgets/mid_row.dart';
+import 'package:fitness_app/detail%20pages/home%20detail/widgets/tab_container.dart';
 import 'package:flutter/material.dart';
 import 'package:fitness_app/constants/app_constant.dart';
 import 'package:fitness_app/detail%20pages/antrenmanlar/antrenman_listesi.dart';
@@ -17,6 +20,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     _tabController = TabController(length: 5, vsync: this);
+    _tabController.index=0;
   }
 
   @override
@@ -40,139 +44,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       body: Column(
         children: [
-          Container(
-            color: Colors.black,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  "Ücretsiz Kargo /",
-                  style: Sabitler.yaziStyle,
-                ),
-                Text("Kapıda Ödeme /", style: Sabitler.yaziStyle),
-                Text("Güvenli Alışveriş", style: Sabitler.yaziStyle),
-              ],
-            ),
-          ),
+          TabContainer(),
           SizedBox(height: 13),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => AntrenmanListesi()));
-                },
-                child: Column(
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          'images/kutu1.jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 3),
-                    Text(
-                      "Antrenmanlar",
-                      style: Sabitler.yaziStyle2,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => KaloriHesaplamaApp()));
-                },
-                child: Column(
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          'images/kutu2.jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 3),
-                    Text(
-                      "Kalori Hesapla",
-                      style: Sabitler.yaziStyle2,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-              InkWell(
-                onTap: () {
-                  print("İndirimdekiler kutusuna tıklandı.");
-                },
-                child: Column(
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.2),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: Offset(0, 3),
-                          ),
-                        ],
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          'images/kutu3.jpg',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 3),
-                    Text(
-                      "Fırsatlar",
-                      style: Sabitler.yaziStyle2,
-                      textAlign: TextAlign.center,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+          MidRow(),
           SizedBox(height: 8),
           Container(
             child: Align(
@@ -210,11 +84,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             child: TabBarView(
               controller: _tabController,
               children: [
-                Center(child: Text("En Çok Satanlar",style: Sabitler.yaziStyle2)),
-                Center(child: Text("Proteinler",style: Sabitler.yaziStyle2)),
-                Center(child: Text("Kombinasyonlar",style: Sabitler.yaziStyle2)),
-                Center(child: Text("Yeni Ürünler",style: Sabitler.yaziStyle2)),
-                Center(child: Text("Öne Çıkanlar",style: Sabitler.yaziStyle2)),
+                _enCokSatanlar(),
+                _proteinler(),
+                _kombinasyonlar(),
+                _yeniUrunler(),
+                _oneCikanlar()
+              
               ],
             ),
           )
@@ -223,4 +98,85 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     );
   }
 }
+_enCokSatanlar(){
+  return GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (context, index) => ItemCard(
+                          imageUrl:
+                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/kingsize_nutrition_zma_complex_100_tablet_70267.jpeg',
+                          price: 1999,
+                          onPressed: () {},
+                          marka: 'KingSize',
+                          urun: 'ZMA',
+                          agirlik: '300', 
+                        ));
+}
+
+_proteinler(){
+  return GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (context, index) => ItemCard(
+                          imageUrl:
+                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/supplementlercom_whey_protein_2000_gr_76555.jpeg',
+                          price: 1999,
+                          onPressed: () {},
+                          marka: 'BigJoy',
+                          urun: 'Protein',
+                          agirlik: '2000', 
+                        ));
+}
+
+_kombinasyonlar(){
+  return GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (context, index) => ItemCard(
+                          imageUrl:
+                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/supplementlercom_gainer_3000_gr_bcaa_480_gr_kombinasyonu_38818.jpeg',
+                          price: 1999,
+                          onPressed: () {},
+                          marka: 'Suplementler',
+                          urun: 'Kilo',
+                          agirlik: '900', 
+                        ));
+}
+
+_yeniUrunler(){
+  return GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (context, index) => ItemCard(
+                          imageUrl:
+                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/hardline_progainer_3000_gr_39326.jpeg',
+                          price: 1999,
+                          onPressed: () {},
+                          marka: 'Hard Line',
+                          urun: 'Gainer',
+                          agirlik: '2000', 
+                        ));
+}
+
+_oneCikanlar(){
+  return GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                    ),
+                    itemBuilder: (context, index) => ItemCard(
+                          imageUrl:
+                              'https://supplementler.mncdn.com/Assets/Supplementler/Thumbs/hardline_kreatin_100_mikronize_300_gr_14580.jpeg',
+                          price: 1999,
+                          onPressed: () {},
+                          marka: 'Hard Line',
+                          urun: 'Creatine',
+                          agirlik: '300', 
+                        ));
+}
+
+
 

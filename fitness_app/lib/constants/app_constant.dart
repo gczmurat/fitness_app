@@ -31,5 +31,16 @@ class Sabitler {
     fontSize: 22,
     fontWeight: FontWeight.w700,color:Colors.white
     
+  );static final TextStyle yaziStyle5 = TextStyle(
+    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontSize: 14,
+    fontWeight: FontWeight.w700,color:Colors.black
+    
+  );
+  static final TextStyle yaziStyle6 = TextStyle(
+    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontSize: 18,
+    fontWeight: FontWeight.w800,color:Colors.black
+    
   );
 }
