@@ -29,7 +29,7 @@ class AntrenmanDetay extends StatelessWidget {
           mainAxisSpacing: 9.0,
           crossAxisSpacing: 9.0,
         ),
-        itemCount: 5,
+        itemCount: 4,
         itemBuilder: (BuildContext context, int index) {
           return Stack(
             children: [

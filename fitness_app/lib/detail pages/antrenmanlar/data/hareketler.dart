@@ -11,4 +11,9 @@ class Antrenman{
 
   Antrenman(this._bolgeAdi, this._hareketAdi, this._hareketResim);
 
+  @override
+  String toString() {
+    return "$_hareketAdi";
+  }
+
 }

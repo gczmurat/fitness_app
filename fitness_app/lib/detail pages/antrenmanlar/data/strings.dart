@@ -39,4 +39,5 @@ class Strings {
       "4 X 10 Seated Leg Curl",
     ],
   ];
+  
 }

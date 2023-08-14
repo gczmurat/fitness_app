@@ -109,7 +109,7 @@ class AntrenmanListesi extends StatelessWidget {
 
 List<Antrenman> veriKaynaginiHazirla() {
   List<Antrenman> gecici = [];
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < Strings.Bolge_Adlari.length; i++) {
     var bolgeAdi = Strings.Bolge_Adlari[i];
     var hareketAdi = Strings.Hareket_Adlari[i][0];
     var hareketResim = Strings.Bolge_Adlari[i].toLowerCase() + "${i + 1}.jpg";
