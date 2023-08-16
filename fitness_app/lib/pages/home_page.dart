@@ -3,9 +3,6 @@ import 'package:fitness_app/detail%20pages/home%20detail/item_card.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/mid_row.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/tab_container.dart';
 import 'package:flutter/material.dart';
-import 'package:fitness_app/constants/app_constant.dart';
-import 'package:fitness_app/detail%20pages/antrenmanlar/antrenman_listesi.dart';
-import 'package:fitness_app/detail%20pages/kalori_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,19 +60,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 unselectedLabelColor: Colors.grey,
                 tabs: [
                   Tab(
-                    text: "En Çok Satanlar",
+                    text: "Tüm Ürünler",
                   ),
                   Tab(
                     text: "Proteinler",
                   ),
                   Tab(
-                    text: "Kombinasyonlar",
+                    text: "Pre-Workout",
                   ),
                   Tab(
-                    text: "Yeni Ürünler",
+                    text: "Vitaminler",
                   ),
                   Tab(
-                    text: "Öne Çıkanlar",
+                    text: "Kreatin",
                   ),
                 ],
               ),
@@ -85,11 +82,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             child: TabBarView(
               controller: _tabController,
               children: [
-                _enCokSatanlar(),
+                _tumUrunler(),
                 _proteinler(),
-                _kombinasyonlar(),
-                _yeniUrunler(),
-                _oneCikanlar()
+                _preWorkout(),
+                _vitaminler(),
+                _kreatin()
               ],
             ),
           )
@@ -99,14 +96,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   }
 }
 
-_enCokSatanlar() {
+_kreatin() {
   return GridView.builder(
     itemCount: 8,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
       itemBuilder: (context, index) => ItemCard(
-            product: products[0],
+            product: products[4],
             onPressed: () {},
           ));
 }
@@ -122,7 +119,7 @@ _proteinler() {
           ));
 }
 
-_kombinasyonlar() {
+_preWorkout() {
   return GridView.builder(
     itemCount: 8,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -133,7 +130,7 @@ _kombinasyonlar() {
           ));
 }
 
-_yeniUrunler() {
+_vitaminler() {
   return GridView.builder(
     itemCount: 8,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -144,13 +141,13 @@ _yeniUrunler() {
           ));
 }
 
-_oneCikanlar() {
+_tumUrunler() {
   return GridView.builder(
-      itemCount: 8,
+      itemCount: products.length,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 1),
       itemBuilder: (context, index) => ItemCard(
-            product: products[4],
+            product: products[index],
             onPressed: () {},
           ));
 }

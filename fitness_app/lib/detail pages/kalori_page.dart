@@ -58,42 +58,96 @@ class _KaloriHesaplamaAppState extends State<KaloriHesaplamaApp> {
                               child: Text(value),
                             ))
                         .toList(),
+                    dropdownColor: Colors.white,
                     decoration: InputDecoration(
                       labelText: 'Cinsiyet',
                       labelStyle: TextStyle(
                         color: cinsiyet == "Erkek" ? Colors.blue : Colors.pink,
                       ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: BorderSide(
+                            color:
+                                cinsiyet == "Erkek" ? Colors.blue : Colors.pink,
+                            width: 2.0),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide:
+                            BorderSide(color: Colors.grey[400]!, width: 1.0),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey[200],
                     ),
                   ),
-                  TextFormField(
-                    keyboardType: TextInputType.number,
-                    initialValue: yas.toString(),
-                    decoration: InputDecoration(labelText: 'Yaş',labelStyle: Sabitler.yaziStyle2),
-                    onChanged: (value) {
-                      setState(() {
-                        yas = double.tryParse(value) ?? 0;
-                      });
-                    },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      initialValue: yas.toString(),
+                      decoration: InputDecoration(
+                        labelText: 'Yaş',
+                        labelStyle: Sabitler.yaziStyle2,
+                        filled: true, 
+                        fillColor: Colors.grey[200], 
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide:
+                              BorderSide(color: Colors.black, width: 2.0),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          yas = double.tryParse(value) ?? 0;
+                        });
+                      },
+                    ),
                   ),
-                  TextFormField(
-                    keyboardType: TextInputType.number,
-                    initialValue: agirlik.toString(),
-                    decoration: InputDecoration(labelText: 'Ağırlık (kg)',labelStyle: Sabitler.yaziStyle2),
-                    onChanged: (value) {
-                      setState(() {
-                        agirlik = double.tryParse(value) ?? 0;
-                      });
-                    },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      initialValue: agirlik.toString(),
+                      decoration: InputDecoration(
+                        labelText: 'Ağırlık (kg)',
+                        labelStyle: Sabitler.yaziStyle2,
+                        filled: true, 
+                        fillColor: Colors.grey[200], 
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide:
+                              BorderSide(color: Colors.black, width: 2.0),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          agirlik = double.tryParse(value) ?? 0;
+                        });
+                      },
+                    ),
                   ),
-                  TextFormField(
-                    keyboardType: TextInputType.number,
-                    initialValue: boy.toString(),
-                    decoration: InputDecoration(labelText: 'Boy (cm)',labelStyle: Sabitler.yaziStyle2),
-                    onChanged: (value) {
-                      setState(() {
-                        boy = double.tryParse(value) ?? 0;
-                      });
-                    },
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      initialValue: boy.toString(),
+                      decoration: InputDecoration(
+                        labelText: 'Boy (cm)',
+                        labelStyle: Sabitler.yaziStyle2,
+                        filled: true, 
+                        fillColor: Colors.grey[200], 
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(5.0),
+                          borderSide:
+                              BorderSide(color: Colors.black, width: 2.0),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          boy = double.tryParse(value) ?? 0;
+                        });
+                      },
+                    ),
                   ),
                   SizedBox(height: 16),
                   ElevatedButton.icon(
@@ -101,16 +155,24 @@ class _KaloriHesaplamaAppState extends State<KaloriHesaplamaApp> {
                     icon: Icon(Icons.arrow_back_ios_new),
                     label: Text(
                       'Hesapla',
-                      style: Sabitler.yaziStyle, 
+                      style: Sabitler.yaziStyle,
                     ),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.black,
                     ),
                   ),
                   SizedBox(height: 16),
-                  Center(child: Text('Günlük Alınması Gereken Minimum Kalori',style: Sabitler.yaziStyle2,)),
+                  Center(
+                      child: Text(
+                    'Günlük Alınması Gereken Minimum Kalori',
+                    style: Sabitler.yaziStyle2,
+                  )),
                   SizedBox(height: 16),
-                  Center(child: Text('$bmr',style: Sabitler.yaziStyle2,)),
+                  Center(
+                      child: Text(
+                    '$bmr',
+                    style: Sabitler.yaziStyle2,
+                  )),
                 ],
               ),
             ),

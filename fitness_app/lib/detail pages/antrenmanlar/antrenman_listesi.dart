@@ -42,7 +42,7 @@ class AntrenmanListesi extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       body: GridView.builder(
-        padding: EdgeInsets.all(9.0),
+        padding: EdgeInsets.all(5.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           mainAxisSpacing: 9.0,
@@ -66,10 +66,10 @@ class AntrenmanListesi extends StatelessWidget {
                 Card(
                   elevation: 5,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(4.0),
                   ),
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(4.0),
                     child: Image.asset(
                       kartResimleri[index],
                       width: 170,

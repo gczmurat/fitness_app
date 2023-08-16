@@ -21,7 +21,7 @@ class NavbarScreen extends StatelessWidget {
         onTap: (i) {
           mp.selectedIndex = i;
         },
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.black,
         unselectedItemColor: Colors.blueGrey.shade700,
         items: mp.items
             .map(
