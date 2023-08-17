@@ -43,9 +43,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       body: Column(
         children: [
           TabContainer(),
-          SizedBox(height: 13),
-          MidRow(),
-          SizedBox(height: 8),
           Container(
             child: Align(
               alignment: Alignment.centerLeft,
@@ -53,7 +50,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 isScrollable: true,
                 indicatorColor: Colors.black,
                 indicatorSize: TabBarIndicatorSize.tab,
-                indicatorWeight: 4,
+                indicatorWeight: 3,
                 indicatorPadding: EdgeInsets.all(4),
                 controller: _tabController,
                 labelColor: Colors.black,

@@ -1,3 +1,4 @@
+import 'package:fitness_app/constants/app_constant.dart';
 import 'package:flutter/material.dart';
 
 class SepetPage extends StatelessWidget {
@@ -5,6 +6,11 @@ class SepetPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder(child: Center(child: Text("Sepet"),),);
+    return Scaffold(
+      appBar: AppBar(title: Text("SEPET",style: Sabitler.yaziStyle4,),
+      backgroundColor: Colors.black,
+      centerTitle: true,
+      toolbarHeight: 35,),
+    );
   }
 }
