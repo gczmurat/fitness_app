@@ -21,7 +21,7 @@ class _KaloriHesaplamaAppState extends State<KaloriHesaplamaApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Debug yazısını kaldırma
+      debugShowCheckedModeBanner: false, 
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,

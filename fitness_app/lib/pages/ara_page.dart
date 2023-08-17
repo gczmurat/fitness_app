@@ -1,5 +1,6 @@
 import 'package:fitness_app/constants/app_constant.dart';
 import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
+import 'package:fitness_app/detail%20pages/home%20detail/widgets/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class AraPage extends StatefulWidget {
@@ -72,35 +73,40 @@ class _AraPageState extends State<AraPage> {
                   )
                 : ListView.builder(
                     itemCount: display_list.length,
-                    itemBuilder: (context, index) => Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.black,
-                          width: 1.0,
+                    itemBuilder: (context, index) => InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  DetailScreen(products: products[index])));
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(4.0),
                         ),
-                        borderRadius: BorderRadius.circular(4.0),
-                      ),
-                      margin: EdgeInsets.all(4.0),
-                      child: ListTile(
-                        contentPadding: EdgeInsets.all(0.0),
-                        title: Text(
-                          "${display_list[index].brand!} ${display_list[index].crop}",
-                          style: Sabitler.yaziStyle2,
-                        ),
-                        subtitle: Text(
-                          display_list[index].crop!,
-                          style: Sabitler.yaziStyle2,
-                        ),
-                        trailing: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                            "${display_list[index].weight} gr",
+                        margin: EdgeInsets.all(4.0),
+                        child: ListTile(
+                          contentPadding: EdgeInsets.all(0.0),
+                          title: Text(
+                            "${display_list[index].brand!} ${display_list[index].crop}",
                             style: Sabitler.yaziStyle2,
                           ),
-                        ),
-                        leading: Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: Image.network(display_list[index].image),
+                          subtitle: Text(
+                            display_list[index].crop!,
+                            style: Sabitler.yaziStyle2,
+                          ),
+                          trailing: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              "${display_list[index].weight} gr",
+                              style: Sabitler.yaziStyle2,
+                            ),
+                          ),
+                          leading: Padding(
+                            padding: const EdgeInsets.all(2.0),
+                            child: Image.network(display_list[index].image),
+                          ),
                         ),
                       ),
                     ),

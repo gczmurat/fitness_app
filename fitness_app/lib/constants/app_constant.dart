@@ -11,36 +11,61 @@ class Sabitler {
 
 
   static final TextStyle yaziStyle = TextStyle(
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: GoogleFonts.roboto().fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w500,color:Colors.white
   );
   static final TextStyle yaziStyle2 = TextStyle(
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: GoogleFonts.roboto().fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w500,color:Colors.black
   );
   static final TextStyle yaziStyle3 = TextStyle(
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: GoogleFonts.roboto().fontFamily,
     fontSize: 16,
     fontWeight: FontWeight.w700,color:Colors.black
     
   );
   static final TextStyle yaziStyle4 = TextStyle(
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: GoogleFonts.roboto().fontFamily,
     fontSize: 22,
     fontWeight: FontWeight.w700,color:Colors.white
     
   );static final TextStyle yaziStyle5 = TextStyle(
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: GoogleFonts.roboto().fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.w700,color:Colors.black
     
   );
   static final TextStyle yaziStyle6 = TextStyle(
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: GoogleFonts.roboto().fontFamily,
     fontSize: 18,
     fontWeight: FontWeight.w800,color:Colors.black
     
   );
+  static final TextStyle yaziStyle7 = TextStyle(
+    fontFamily: GoogleFonts.roboto().fontFamily,
+    fontSize: 22,
+    fontWeight: FontWeight.w700,color:Colors.black
+    
+  );
+  static final TextStyle yaziStyle8 = TextStyle(
+    fontFamily: GoogleFonts.roboto().fontFamily,
+    fontSize: 12,
+    fontWeight: FontWeight.w700,color:Colors.green
+    
+  );
+  static final TextStyle yaziStyle9 = TextStyle(
+    fontFamily: GoogleFonts.roboto().fontFamily,
+    fontSize: 12,
+    fontWeight: FontWeight.w700,color:Colors.blue
+    
+  );
+  static final TextStyle yaziStyle10 = TextStyle(
+    fontFamily: GoogleFonts.roboto().fontFamily,
+    fontSize: 12,
+    fontWeight: FontWeight.w700,color:Colors.black
+    
+  );
+  
 }

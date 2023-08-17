@@ -1,5 +1,6 @@
 import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/item_card.dart';
+import 'package:fitness_app/detail%20pages/home%20detail/widgets/detail_screen.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/mid_row.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/tab_container.dart';
 import 'package:flutter/material.dart';
@@ -95,46 +96,54 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
 _kreatin() {
   return GridView.builder(
-    itemCount: 8,
+      itemCount: 8,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
       ),
       itemBuilder: (context, index) => ItemCard(
             product: products[4],
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  DetailScreen(products: products[index])));
+            },
           ));
 }
 
 _proteinler() {
   return GridView.builder(
-    itemCount: 8,
+      itemCount: 8,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 1),
       itemBuilder: (context, index) => ItemCard(
             product: products[1],
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  DetailScreen(products: products[index])));
+            },
           ));
 }
 
 _preWorkout() {
   return GridView.builder(
-    itemCount: 8,
+      itemCount: 8,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 1),
       itemBuilder: (context, index) => ItemCard(
             product: products[2],
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  DetailScreen(products: products[index])));
+            },
           ));
 }
 
 _vitaminler() {
   return GridView.builder(
-    itemCount: 8,
+      itemCount: 8,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: 1),
       itemBuilder: (context, index) => ItemCard(
             product: products[3],
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  DetailScreen(products: products[index])));
+            },
           ));
 }
 
@@ -145,6 +154,8 @@ _tumUrunler() {
           crossAxisCount: 2, childAspectRatio: 1),
       itemBuilder: (context, index) => ItemCard(
             product: products[index],
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  DetailScreen(products: products[index])));
+            },
           ));
 }
