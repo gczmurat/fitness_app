@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168364835267",
+    "project_id": "authtutorial-e60eb",
+    "storage_bucket": "authtutorial-e60eb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168364835267:android:16af93bcade0dcaf2c3d76",
+        "android_client_info": {
+          "package_name": "com.example.fitness_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168364835267-l8l4bkd1h06pjlboemso8hl8g8195fjv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFiALPVo-Glkj-9b1Y_qROEliUGP_CsZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168364835267-l8l4bkd1h06pjlboemso8hl8g8195fjv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
