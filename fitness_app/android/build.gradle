@@ -4,39 +4,12 @@ buildscript {
         google()
         mavenCentral()
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.gms:google-services:4.3.15' 
     }
 }
-
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-}
-
-android {
-    compileSdkVersion 32
-    defaultConfig {
-        applicationId "your.package.name"
-        
-    }
-    buildTypes {
-        release {
-            
-        }
-    }
-}
-
-dependencies {
-    implementation platform("com.google.firebase:firebase-bom:32.2.2")
-    implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.google.firebase:firebase-firestore'
-    
-}
-
-apply plugin: 'com.google.gms.google-services' 
 
 allprojects {
     repositories {
@@ -48,6 +21,9 @@ allprojects {
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
 }
 
 tasks.register("clean", Delete) {
