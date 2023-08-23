@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'cart_counter.dart';
 
 class CounterWithFavBtn extends StatelessWidget {
@@ -17,7 +18,7 @@ class CounterWithFavBtn extends StatelessWidget {
             height: 32,
             width: 32,
             decoration:
-                BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                BoxDecoration(color: Colors.transparent),
             child: Icon(
               Icons.favorite_outline,
               color: Colors.red,

@@ -1,25 +1,26 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/constants/app_constant.dart';
-import 'package:fitness_app/global/common/navbar_screen.dart';
 import 'package:fitness_app/hessap%20detail/login_button.dart';
 import 'package:fitness_app/hessap%20detail/login_text_field.dart';
 import 'package:fitness_app/hessap%20detail/square_tile.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   final Function()? onTap;
-  LoginPage({super.key,required this.onTap});
+  RegisterPage({super.key,required this.onTap});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
 
   final passwordController = TextEditingController();
 
-  void signUser(BuildContext context) async {
+  final confirmPasswordController = TextEditingController();
+
+  void signUserUp(BuildContext context) async {
     showDialog(
       context: context,
       builder: (context) {
@@ -29,29 +30,17 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
-    await FirebaseAuth.instance
-        .signInWithEmailAndPassword(
-            email: emailController.text, password: passwordController.text)
-        .then((value) {
-      Navigator.pop(context);
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => NavbarScreen()),
-      );
-    }).catchError((error) {
-      Navigator.pop(context);
-      print("Error: $error");
-    });
-
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(email: emailController.text, password: passwordController.text);
-    } on FirebaseAuthException catch (e) {
-      if (e.code == "user-not-found"){
+      if(passwordController.text == confirmPasswordController.text){
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(email: emailController.text, password: passwordController.text);
+      }else {
         wrongEmail();
       }
-
-      else if (e.code == "wrong-password") {
-        wrongPassword();
+        Navigator.pop(context);
+    }on FirebaseAuthException catch (e) {
+      Navigator.pop(context);
+      if (e.code == "user-not-found"){
+        wrongEmail();
       }
     }
   }
@@ -61,22 +50,12 @@ class _LoginPageState extends State<LoginPage> {
     context: context,
     builder: (context){
       return AlertDialog(
-        title: Center(child: Text("Hatalı E-posta",style: Sabitler.yaziStyle,)),
+        title: Center(child: Text("Şifreler uyuşmuyor!",style: Sabitler.yaziStyle,)),
       );
     },
   );
 }
 
-  void wrongPassword(){
-  showDialog(
-    context: context,
-    builder: (context){
-      return AlertDialog(
-        title: Center(child: Text("Hatalı Şifre",style: Sabitler.yaziStyle2,)),
-      );
-    },
-  );
-}
 
 
   @override
@@ -90,14 +69,10 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 Image.asset(
                   "images/logo2.png",
-                  height: 100,
+                  height: 70,
                 ),
                 const SizedBox(
-                  height: 40,
-                ),
-                Text(
-                  "HOŞGELDİNİZ",
-                  style: Sabitler.yaziStyle11,
+                  height: 20,
                 ),
                 const SizedBox(
                   height: 20,
@@ -116,6 +91,12 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: true,
                 ),
                 SizedBox(height: 10),
+                LoginText(
+                  controller: confirmPasswordController,
+                  hintText: 'şifreyi onayla',
+                  obscureText: true,
+                ),
+                SizedBox(height: 10),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 35),
                   child: Row(
@@ -130,8 +111,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 25),
                 LoginButton(
-                  text: "Giriş Yap",
-                  onTap: () => signUser(context),
+                  text: "Kayıt Ol",
+                  onTap: () => signUserUp(context),
                 ),
                 const SizedBox(
                   height: 10,
@@ -174,13 +155,13 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        "Hesabın yok mu ? ",
+                        "Hesabın var mı ?  ",
                         style: Sabitler.yaziStyle2,
                       ),
                       InkWell(
                         onTap: widget.onTap,
                         child: Text(
-                          "Şimdi Kayıt Ol",
+                          "Giriş yap",
                           style: Sabitler.yaziStyle12,
                         ),
                       ),

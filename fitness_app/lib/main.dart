@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/constants/app_constant.dart';
 import 'package:fitness_app/global/common/navbar_provider.dart';
-import 'package:fitness_app/global/common/navbar_screen.dart';
+import 'package:fitness_app/hessap%20detail/login_or_register_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
           //return Center(child: CircularProgressIndicator(),);
         //}
       //} ,);,
-      NavbarScreen(),
+      LoginOrRegisterPage(),
     );
   }
 }

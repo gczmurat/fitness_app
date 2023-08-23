@@ -46,8 +46,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
-                      height: 150,
-                      width: 130,
+                      height: 300,
+                      width: 270,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: Colors.amber,
@@ -66,8 +66,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
-                      height: 150,
-                      width: 130,
+                      height: 300,
+                      width: 270,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: Colors.amber,
@@ -86,8 +86,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
-                      height: 150,
-                      width: 130,
+                      height: 300,
+                      width: 270,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: Colors.amber,
@@ -106,8 +106,8 @@ class _DetailScreenState extends State<DetailScreen> {
                   Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Container(
-                      height: 150,
-                      width: 130,
+                      height: 300,
+                      width: 270,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
                         color: Colors.amber,

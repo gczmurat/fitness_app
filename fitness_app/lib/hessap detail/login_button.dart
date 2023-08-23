@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class LoginButton extends StatelessWidget {
   final Function() ? onTap;
+  final String text;
 
-  const LoginButton({super.key,required this.onTap});
+  const LoginButton({super.key,required this.onTap, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +13,12 @@ class LoginButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 50,
-        width: 100,
+        width: 200,
         padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(color: Colors.black,borderRadius: BorderRadius.circular(5)),
         child: Center(
           child: Text(
-            "Giriş Yap",
+            text,
             style: Sabitler.yaziStyle,
           ),
         ),

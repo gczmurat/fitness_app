@@ -8,13 +8,17 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("MENÜ",style: Sabitler.yaziStyle4,),
-      backgroundColor: Colors.black,
-      centerTitle: true,
-      toolbarHeight: 35,),
-      body: Column(children: [
-        MidRow()
-      ]),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(
+          "MENÜ",
+          style: Sabitler.yaziStyle4,
+        ),
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        toolbarHeight: 35,
+      ),
+      body: Column(children: [MidRow()]),
     );
   }
 }

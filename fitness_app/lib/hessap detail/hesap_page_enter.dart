@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/constants/app_constant.dart';
 import 'package:fitness_app/hessap%20detail/bilgilerim.dart';
+import 'package:fitness_app/hessap%20detail/login_or_register_page.dart';
+import 'package:fitness_app/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class HesapPageEnter extends StatelessWidget {
@@ -9,6 +12,7 @@ class HesapPageEnter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Text(
           "HESABIM",
           style: Sabitler.yaziStyle4,
@@ -516,7 +520,14 @@ class HesapPageEnter extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(1),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    FirebaseAuth.instance.signOut().then((value) {
+                      Navigator.push(context,
+        MaterialPageRoute(builder: (context) => LoginOrRegisterPage())).onError((error, stackTrace) {
+          print("Error");
+        });
+                    });
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,

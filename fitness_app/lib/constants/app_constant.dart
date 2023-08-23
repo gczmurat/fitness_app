@@ -73,5 +73,10 @@ class Sabitler {
     fontWeight: FontWeight.w700,color:Colors.grey[700]
     
   );
+  static final TextStyle yaziStyle12 = TextStyle(
+    fontFamily: GoogleFonts.roboto().fontFamily,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,color:Colors.blueAccent
+  );
   
 }

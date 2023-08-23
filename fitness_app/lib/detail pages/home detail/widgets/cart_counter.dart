@@ -29,9 +29,9 @@ class _CartCounterState extends State<CartCounter> {
             },
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Text(
-              numOfItem.toString().padLeft(2, "0"),
+              numOfItem.toString().padLeft(0, "0"),
               style: Sabitler.yaziStyle2,
             ),
           ),
@@ -52,7 +52,7 @@ class _CartCounterState extends State<CartCounter> {
 
   SizedBox outLineButton({required Function press, IconData? icon}) {
     return SizedBox(
-      width: 50,
+      width: 40,
       height: 40,
       child: OutlinedButton(
         onPressed: () {

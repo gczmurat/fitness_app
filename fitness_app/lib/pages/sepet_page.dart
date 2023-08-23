@@ -7,10 +7,16 @@ class SepetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("SEPET",style: Sabitler.yaziStyle4,),
-      backgroundColor: Colors.black,
-      centerTitle: true,
-      toolbarHeight: 35,),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Text(
+          "SEPET",
+          style: Sabitler.yaziStyle4,
+        ),
+        backgroundColor: Colors.black,
+        centerTitle: true,
+        toolbarHeight: 35,
+      ),
     );
   }
 }
