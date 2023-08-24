@@ -1,6 +1,5 @@
 import 'package:fitness_app/constants/app_constant.dart';
 import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
-import 'package:fitness_app/detail%20pages/home%20detail/widgets/detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {

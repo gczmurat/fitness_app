@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class Product {
   final String brand, crop, image, description;
   final price, id, weight;

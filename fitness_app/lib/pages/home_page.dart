@@ -1,7 +1,7 @@
+import 'package:fitness_app/detail%20pages/antrenmanlar/data/cart.dart';
 import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/item_card.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/detail_screen.dart';
-import 'package:fitness_app/detail%20pages/home%20detail/widgets/mid_row.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/tab_container.dart';
 import 'package:flutter/material.dart';
 

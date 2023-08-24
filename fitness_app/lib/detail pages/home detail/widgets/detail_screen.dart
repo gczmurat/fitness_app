@@ -1,12 +1,16 @@
 import 'package:fitness_app/constants/app_constant.dart';
+import 'package:fitness_app/detail%20pages/antrenmanlar/data/cart.dart';
 import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/add_to_card.dart';
 import 'package:fitness_app/detail%20pages/home%20detail/widgets/counter_with_fav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'cart_counter.dart';
+
 
 class DetailScreen extends StatefulWidget {
   final Product products;
+  //final Cart cart;
 
   const DetailScreen({required this.products, super.key});
 
@@ -20,6 +24,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -305,3 +310,7 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 }
+
+
+
+

@@ -10,6 +10,7 @@ class CartCounter extends StatefulWidget {
 
 class _CartCounterState extends State<CartCounter> {
   int numOfItem = 1;
+  int get itemCount => numOfItem;
   @override
   Widget build(BuildContext context) {
     return Padding(
