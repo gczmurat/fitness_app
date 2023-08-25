@@ -93,7 +93,7 @@ class _SepetPageState extends State<SepetPage> {
                                     Padding(
                                       padding: const EdgeInsets.symmetric(vertical: 10),
                                       child: Text(
-                                        "${_price} TL",
+                                        "${_price * quantityCounts} TL",
                                         style: Sabitler.yaziStyle2,
                                       ),
                                     ),
