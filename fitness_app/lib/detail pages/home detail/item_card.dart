@@ -15,19 +15,19 @@ class ItemCard extends StatelessWidget {
     return GestureDetector(
       onTap: (){onPressed();},
       child: Padding(
-        padding: const EdgeInsets.all(1.0),
+        padding:  EdgeInsets.all(1.0),
         child: Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding:  EdgeInsets.all(1.0),
           child: Container(
             decoration: BoxDecoration(border: Border.all(
-                            color: Colors.black,
+                            color: Colors.grey.shade700,
                             width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(5.0),),
+                          borderRadius: BorderRadius.circular(0.0),),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(0), 
+                borderRadius: BorderRadius.circular(0),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ class ItemCard extends StatelessWidget {
                       product.image,
                       height: 100,
                       width: double.infinity,
-                      fit: BoxFit.fitHeight, 
+                      fit: BoxFit.fitHeight,
                     ),
                   ),
                   Padding(

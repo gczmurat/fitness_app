@@ -1,12 +1,10 @@
 import 'package:fitness_app/constants/app_constant.dart';
 import 'package:fitness_app/detail%20pages/antrenmanlar/data/cart.dart';
 import 'package:fitness_app/detail%20pages/antrenmanlar/data/product.dart';
-import 'package:fitness_app/detail%20pages/home%20detail/widgets/add_to_card.dart';
-import 'package:fitness_app/detail%20pages/home%20detail/widgets/counter_with_fav.dart';
+import 'package:fitness_app/pages/sepet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'cart_counter.dart';
-
+import 'package:provider/provider.dart';
 
 class DetailScreen extends StatefulWidget {
   final Product products;
@@ -21,10 +19,54 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   double rating = 0;
   String aroma = "Kakao";
+  // quantity
+  int quantityCount = 1;
+  // decrement quantity
+  void decrementQuantity() {
+    setState(() {
+      if (quantityCount > 1) {
+        quantityCount--;
+      }
+    });
+  }
+
+  // increment quantity
+  void incrementQuantity() {
+    setState(() {
+      quantityCount++;
+    });
+  }
+
+  void addToCart() {
+    final shop = context.read<Shop>();
+    shop.addToCart(widget.products, quantityCount);
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        content: Text("Sepete Eklendi",style: Sabitler.yaziStyle2,),
+        actions: [
+          TextButton(onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => SepetPage(),));
+          }, child: Text("Sepete Git",style: Sabitler.yaziStyle12,)),
+          IconButton(onPressed: () {
+            Navigator.pop(context);
+            Navigator.pop(context);
+            
+          }, icon: Icon(Icons.done))
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    
+    final ButtonStyle raisedButtonstyle = ElevatedButton.styleFrom(
+      onPrimary: Colors.white,
+      primary: Colors.black,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4),
+      ),
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -49,12 +91,12 @@ class _DetailScreenState extends State<DetailScreen> {
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.all(3.0),
                     child: Container(
                       height: 300,
                       width: 270,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(4),
+                        borderRadius: BorderRadius.circular(2),
                         color: Colors.amber,
                         border: Border.all(
                           color: Colors.black,
@@ -274,8 +316,62 @@ class _DetailScreenState extends State<DetailScreen> {
                     .toList(),
               ),
             ),
-            CounterWithFavBtn(),
-            AddToCard(products: widget.products),
+            // minus button
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                    child: IconButton(
+                  icon: Icon(Icons.remove),
+                  onPressed: decrementQuantity,
+                )),
+                Text(
+                  quantityCount.toString(),
+                  style: Sabitler.yaziStyle2,
+                ),
+                Container(
+                    child: IconButton(
+                  icon: Icon(Icons.add),
+                  onPressed: incrementQuantity,
+                )),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 25),
+                    height: 50,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black),
+                    ),
+                    child: IconButton(
+                      onPressed: addToCart,
+                      icon: Icon(
+                        Icons.shopping_bag_outlined,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: SizedBox(
+                      height: 50,
+                      child: ElevatedButton(
+                        style: raisedButtonstyle,
+                        onPressed: addToCart,
+                        child: Text(
+                          "Satın Al".toUpperCase(),
+                          style: Sabitler.yaziStyle,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
             Container(
               height: 10,
               decoration: BoxDecoration(color: Colors.grey.shade400),
@@ -302,7 +398,10 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
             Padding(
               padding: const EdgeInsets.all(5.0),
-              child: Text(widget.products.description,style: Sabitler.yaziStyle2,),
+              child: Text(
+                widget.products.description,
+                style: Sabitler.yaziStyle2,
+              ),
             )
           ],
         ),
@@ -310,7 +409,3 @@ class _DetailScreenState extends State<DetailScreen> {
     );
   }
 }
-
-
-
-

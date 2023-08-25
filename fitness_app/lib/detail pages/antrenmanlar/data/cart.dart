@@ -1,34 +1,19 @@
+import 'package:flutter/material.dart';
 import 'product.dart';
 
-class CartItem {
-  final Product product;
-  int quantity;
+class Shop extends ChangeNotifier{
+  List<Product> _cart = [];
 
-  CartItem({required this.product, this.quantity = 1});
-}
+  List<Product> get cart => _cart;
 
-class Cart {
-  List<CartItem> items = [];
-
-  void addItem(Product product) {
-    bool existingItem = false;
-    for (var item in items) {
-      if (item.product.id == product.id) {
-        item.quantity++;
-        existingItem = true;
-        break;
-      }
+  void addToCart(Product productItem, int quantity){
+    for (int i = 0; i < quantity; i++){
+      _cart.add(productItem);
     }
-    if (!existingItem) {
-      items.add(CartItem(product: product));
-    }
+    notifyListeners();
   }
-
-  void removeItem(Product product) {
-    items.removeWhere((item) => item.product.id == product.id);
-  }
-
-  void clearCart() {
-    items.clear();
+  void removeFromCart(Product product){
+    _cart.remove(product);
+    notifyListeners();
   }
 }

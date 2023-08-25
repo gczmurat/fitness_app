@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/constants/app_constant.dart';
 import 'package:fitness_app/hessap%20detail/bilgilerim.dart';
 import 'package:fitness_app/hessap%20detail/login_or_register_page.dart';
-import 'package:fitness_app/pages/login.dart';
 import 'package:flutter/material.dart';
 
 class HesapPageEnter extends StatelessWidget {
@@ -27,13 +26,13 @@ class HesapPageEnter extends StatelessWidget {
             height: 10,
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
               decoration: BoxDecoration(
                 color: Colors.black,
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(2),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(1),
@@ -70,7 +69,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -113,7 +112,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -156,7 +155,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -203,7 +202,7 @@ class HesapPageEnter extends StatelessWidget {
             style: Sabitler.yaziStyle3,
           ),
            Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -246,7 +245,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
            Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -289,7 +288,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
            Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -332,7 +331,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
            Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -379,7 +378,7 @@ class HesapPageEnter extends StatelessWidget {
             style: Sabitler.yaziStyle3,
           ),
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -422,7 +421,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
            Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -465,7 +464,7 @@ class HesapPageEnter extends StatelessWidget {
             ),
           ),
            Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,
@@ -509,7 +508,7 @@ class HesapPageEnter extends StatelessWidget {
           ),
           
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.all(2.0),
             child: Container(
               height: 40,
               width: 370,

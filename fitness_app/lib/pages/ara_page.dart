@@ -81,12 +81,12 @@ class _AraPageState extends State<AraPage> {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Colors.black,
+                            color: Colors.grey.shade700,
                             width: 1.0,
                           ),
-                          borderRadius: BorderRadius.circular(4.0),
+                          borderRadius: BorderRadius.circular(3.0),
                         ),
-                        margin: EdgeInsets.all(4.0),
+                        margin: EdgeInsets.all(2.0),
                         child: ListTile(
                           contentPadding: EdgeInsets.all(0.0),
                           title: Text(
